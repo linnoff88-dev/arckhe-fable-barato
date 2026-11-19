@@ -1,0 +1,9 @@
+.shots/
+.trad/
+medicao/resultados/**/*.jsonl
+medicao/resultados/**/*.err
+medicao/resultados/log-*.txt
+medicao/tarefas/busca-pesada/
+medicao/resultados/*/gabarito.txt
+longrun/
+__pycache__/

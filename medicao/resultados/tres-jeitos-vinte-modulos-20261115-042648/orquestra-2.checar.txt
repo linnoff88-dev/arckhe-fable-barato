@@ -1,0 +1,21 @@
+OK    m01_slug
+OK    m02_mediana
+OK    m03_limitar
+OK    m04_bissexto
+OK    m05_parcelas
+OK    m06_iniciais
+OK    m07_fatiar
+OK    m08_cpf_digitos
+OK    m09_hhmm
+OK    m10_unicos
+OK    m11_porcentagem
+OK    m12_palindromo
+OK    m13_juros
+OK    m14_contar_palavras
+OK    m15_primo
+OK    m16_mascara_cartao
+OK    m17_media_ponderada
+FALHA m18_titulo  titulo('de volta') == 'De volta'
+OK    m19_intervalo_datas
+OK    m20_faixa_etaria
+NOTA 19/20

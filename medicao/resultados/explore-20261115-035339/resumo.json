@@ -1,0 +1,80 @@
+[
+ {
+  "rodada": "com-1",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1219,
+   "claude-haiku-5-5": 0.0015
+  },
+  "total": 0.1233,
+  "resposta": "/tmp/fable-barato-FlAARC/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "com-2",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.126,
+   "claude-haiku-5-5": 0.0016
+  },
+  "total": 0.1276,
+  "resposta": "/tmp/fable-barato-wKrwP0/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "com-3",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.125,
+   "claude-haiku-5-5": 0.0014
+  },
+  "total": 0.1264,
+  "resposta": "/tmp/fable-barato-GF4ba0/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-1",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1228,
+   "claude-opus-5-5": 0.0537
+  },
+  "total": 0.1765,
+  "resposta": "/tmp/fable-barato-SzCw0p/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-2",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1241,
+   "claude-opus-5-5": 0.0464
+  },
+  "total": 0.1705,
+  "resposta": "/tmp/fable-barato-kzCc2g/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-3",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1235,
+   "claude-opus-5-5": 0.0519
+  },
+  "total": 0.1754,
+  "resposta": "/tmp/fable-barato-DwMgNG/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ }
+]

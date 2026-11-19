@@ -1,0 +1,1 @@
+claude=2.1.325 (Claude Code) modelo=fable esforco=medium rep=3 alvo=esforco-medido

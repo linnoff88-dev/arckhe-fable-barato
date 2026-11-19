@@ -1,0 +1,1 @@
+claude=2.1.325 (Claude Code) tarefa=vinte-modulos rep=2 jeitos=fable,opus,orquestra

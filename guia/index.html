@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!-- TEMPLATE projetos-landing-guia. Troque placeholders e o conteudo. NAO reescreva o CSS.
+     TRILINGUE: este arquivo e a versao PT (guia/index.html). As versoes guia/en/index.html e
+     guia/es/index.html sao copias traduzidas: lang="en"/"es", seletor com a.on no idioma,
+     hrefs do seletor ../ e ../es/ (ou ../en/), e imagens assets/ -> ../assets/. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fable-barato — Descobri o documento que mostra como reduzir o custo do Fable 5.2</title>
+<meta name="description" content="Kit gratuito para Claude Code: o documento oficial da Anthropic sobre custo do Fable 5.2, medido na prática. Busca no Haiku 22 a 48 vezes mais barata, quando dividir o trabalho, revisor Fable e auditoria.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/fable-barato/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/fable-barato/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/fable-barato/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1300px){nav .links{gap:14px;font-size:.86rem}}
+  @media(max-width:1100px){nav .links a.sec[href="#video"],nav .links a.sec[href="#graficos"]{display:none}}
+  @media(max-width:960px){nav .links a.sec[href="#relatorios"]{display:none}}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  table.n{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:10px}
+  table.n th,table.n td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
+  table.n th{color:var(--amb);font-family:Sora}
+  /* gráficos comparativos (âmbar = agora/realidade, azul = antes/cenário, hachura = projeção) */
+  :root{--c-now:#BF8224;--c-old:#4D8FE0}
+  body.light{--c-now:#B9791D;--c-old:#2F6FC4}
+  .charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  @media(max-width:820px){.charts{grid-template-columns:1fr}}
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px}
+  .chart h3{margin:0 0 4px;font-family:Sora;font-size:1.02rem}
+  .chart .cap{color:var(--mut);font-size:.84rem;margin:0 0 14px}
+  .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--mut);margin-top:10px}
+  .leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .sw-now{background:var(--c-now)} .sw-old{background:var(--c-old)}
+  .sw-proj{background:repeating-linear-gradient(45deg,var(--c-now) 0 3px,transparent 3px 7px);border:1px solid var(--c-now)}
+  .hb{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .hb .g{font-size:.78rem;color:var(--mut);margin-top:6px}
+  .hb .row{display:grid;grid-template-columns:118px minmax(0,1fr);gap:10px;align-items:center;font-size:.82rem}
+  .hb .row>span:first-child{color:var(--mut);line-height:1.25}
+  .hb .trk{position:relative;height:22px}
+  .bar{height:100%;border-radius:0 4px 4px 0;min-width:4px;display:flex;align-items:center}
+  .bar.now{background:var(--c-now)} .bar.old{background:var(--c-old)}
+  .bar.proj{background:repeating-linear-gradient(45deg,var(--c-now) 0 3px,transparent 3px 7px);border:1px solid var(--c-now)}
+  .bar b{position:absolute;left:calc(var(--w) + 8px);font-weight:600;font-size:.8rem;color:var(--txt);white-space:nowrap}
+  .vb{display:flex;align-items:flex-end;gap:6px;height:190px;border-bottom:1px solid var(--line);padding-top:22px}
+  .vb .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+  .vb .col .v{font-size:.74rem;font-weight:600;color:var(--txt);margin-bottom:3px}
+  .vb .col .b{width:100%;max-width:38px;border-radius:4px 4px 0 0;min-height:2px}
+  .vb .col .b.now{background:var(--c-now)} .vb .col .b.old{background:var(--c-old)}
+  .vb .col .b.proj{background:repeating-linear-gradient(45deg,var(--c-now) 0 3px,transparent 3px 7px);border:1px solid var(--c-now);border-bottom:none}
+  .vb .gap{flex:0 0 14px;align-self:center;color:var(--mut);text-align:center}
+  .vx{display:flex;gap:6px;font-size:.72rem;color:var(--mut);margin-top:6px}
+  .vx span{flex:1;text-align:center} .vx .gap{flex:0 0 14px}
+  /* relatórios originais + gráficos originais + ajuste */
+  .reps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:46px}
+  .rep{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;color:var(--txt)}
+  .rep:hover{border-color:var(--amb)}
+  .rep .tag{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amb);font-family:Sora;font-weight:600}
+  .rep strong{font-family:Sora;font-size:1.25rem}
+  .rep span{color:var(--mut);font-size:.93rem}
+  .rep em{font-style:normal;color:var(--amb);font-weight:600;font-size:.88rem;margin-top:auto}
+  .h3o{font-family:Sora;font-size:1.35rem;margin:0 0 .2em}
+  .origs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .orig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .orig img{display:block;width:100%;height:auto;background:#fff}
+  .orig figcaption{padding:16px 18px;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+  .orig figcaption b{font-family:Sora;font-size:1.02rem}
+  .orig figcaption span{color:var(--mut)} .orig figcaption i{font-style:normal;color:var(--amb);font-weight:600}
+  .ajuste{margin-top:52px}
+  .aj{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .ajrow{display:grid;grid-template-columns:1.5fr 1fr 1fr .9fr;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);align-items:center;font-size:.92rem}
+  .ajrow:last-child{border-bottom:none}
+  .ajrow small{display:block;color:var(--mut);font-size:.78rem;font-weight:400}
+  .ajhead{background:var(--bg2);font-family:Sora;font-weight:600;color:var(--amb);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+  .ajrow .old{color:var(--c-old);font-weight:600} .ajrow .now{color:var(--c-now);font-weight:700}
+  .ajrow .dif{font-family:Sora;font-weight:800;color:var(--amb)}
+  .aj-em{margin-top:18px;background:rgba(226,162,59,.08);border:1px solid rgba(226,162,59,.35);border-radius:14px;padding:18px 20px}
+  .aj-em small{display:block;color:var(--mut);margin-top:10px;font-size:.82rem}
+  @media(max-width:820px){.reps,.origs{grid-template-columns:1fr}
+    .ajhead{display:none}
+    .ajrow{grid-template-columns:1fr 1fr;gap:8px 14px}
+    .ajrow>span:first-child{grid-column:1/-1}
+    .ajrow .dif{grid-column:1/-1}}
+  /* cenário original com projeções por cima + explicações */
+  .cen{margin-bottom:52px}
+  .kbox{display:flex;flex-direction:column;gap:7px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amb);border-radius:12px;padding:16px 18px;margin:0 0 22px;font-size:.9rem}
+  .kbox span{color:var(--mut)} .kbox i:not(.sw){font-style:normal;color:var(--txt);font-weight:600}
+  .kbox .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+  .ov{position:relative;background:#fff}
+  .ov .pa{position:absolute;left:0;right:0;pointer-events:none}
+  .ov .vl{position:absolute;top:0;bottom:0;border-left:3px dashed #16a34a}
+  .ov .vl.old{border-left-color:#2563eb}
+  .ov .band{position:absolute;top:0;bottom:0;background:rgba(226,162,59,.32);border-left:2px solid #d97706;border-right:2px solid #d97706}
+  .ov .band.ted{background:repeating-linear-gradient(45deg,rgba(147,51,234,.22) 0 6px,rgba(147,51,234,.08) 6px 12px);border-color:#9333ea}
+  .ov em,.mk em{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font:800 .75rem Sora,sans-serif;color:#fff;background:#16a34a}
+  .ov em{position:absolute;top:-4px;left:50%;transform:translateX(-50%);box-shadow:0 1px 4px rgba(0,0,0,.35)}
+  .ov .vl em{left:-1.5px}
+  .ov .vl.old em,.mk em.old{background:#2563eb}
+  .ov .band em,.mk em.band{background:#d97706} .ov .band.ted em,.mk em.ted{background:#9333ea}
+  .mk{list-style:none;margin:2px 0;padding:0;display:flex;flex-direction:column;gap:6px;color:var(--mut)}
+  .mk li{position:relative;padding-left:30px;min-height:22px} .mk li>em{position:absolute;left:0;top:1px}
+  .ov .band em{top:auto;bottom:6px}
+  .exp{color:var(--mut);font-size:.86rem;margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line)}
+  .exp b{color:var(--amb)}
+  /* plano de ação + animação da janela */
+  .anim{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;margin-bottom:34px}
+  .an-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:26px}
+  .clk{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--mut)} .clk b{color:var(--amb)}
+  .dial{position:relative;width:42px;height:42px;border-radius:50%;border:3px solid var(--c-old)}
+  .dial.now{border-color:var(--c-now)}
+  .hand{position:absolute;left:50%;bottom:50%;width:3px;height:15px;margin-left:-1.5px;border-radius:2px;background:var(--txt);transform-origin:50% 100%}
+  .anim.run .hand.slow{animation:spin 3s linear infinite} .anim.run .hand.fast{animation:spin 1.765s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .replay{margin-left:auto;background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:.45em .9em;cursor:pointer;font:600 .85rem Sora,sans-serif}
+  .replay:hover{border-color:var(--amb)}
+  .an-axis{position:relative;height:34px;margin:0 8% 6px 150px;border-bottom:1px solid var(--line);font-size:.74rem;color:var(--mut)}
+  .an-axis span{position:absolute;bottom:4px;transform:translateX(-50%);text-align:center;line-height:1.15;white-space:nowrap}
+  .an-axis span:first-child{transform:none}
+  .trk2{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px;align-items:center;margin:18px 8% 0 0}
+  .trk2 .lbl{font:600 .82rem Sora,sans-serif;color:var(--mut)}
+  .lane{position:relative;height:30px;background:var(--bg2);border-radius:8px;margin-bottom:46px}
+  .fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:8px}
+  .fill.old{background:var(--c-old)} .fill.now{background:var(--c-now)}
+  .zone{position:absolute;top:-4px;bottom:-4px;background:repeating-linear-gradient(45deg,rgba(226,162,59,.35) 0 5px,transparent 5px 10px);border:1px dashed var(--c-now);border-radius:6px}
+  .pin{position:absolute;top:-6px;bottom:-6px;border-left:3px solid var(--c-old);opacity:.25;transition:opacity .4s}
+  .pin.now{border-color:var(--c-now)} .pin.on{opacity:1}
+  .pin em{position:absolute;top:100%;margin-top:4px;font-style:normal;font-size:.72rem;font-weight:600;white-space:nowrap;transform:translateX(-100%);color:var(--txt)}
+  .pin.now em{transform:none;left:4px}
+  .pin small{position:absolute;bottom:100%;margin-bottom:2px;font-size:.72rem;color:var(--mut);white-space:nowrap;transform:translateX(-50%)}
+  .cnt{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:.8rem;color:#fff;font-weight:600;white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .cnt b{font:800 1.05rem Sora,sans-serif}
+  .an-cap{color:var(--mut);font-size:.9rem;margin:0}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .vcol{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .vcol.old{border-top:4px solid var(--c-old)} .vcol.now{border-top:4px solid var(--c-now)}
+  .vcol .tag{font:600 .74rem Sora,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+  .vcol h3{font-family:Sora;margin:.4em 0 .7em;font-size:1.1rem}
+  .vcol ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:var(--mut);font-size:.9rem}
+  .vcol li b{color:var(--txt)}
+  .steps2{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:.86rem}
+  .st .when{font:800 .78rem Sora,sans-serif;color:var(--amb);text-transform:uppercase;letter-spacing:.05em}
+  .st b{font-family:Sora;font-size:.98rem} .st>span:last-child{color:var(--mut)}
+  .st code{font-size:.8rem;color:var(--amb2)}
+  @media(max-width:1000px){.steps2{grid-template-columns:1fr 1fr}}
+  @media(max-width:700px){.vs,.steps2{grid-template-columns:1fr}
+    .an-axis{margin-left:0;margin-right:12%} .trk2{grid-template-columns:1fr;gap:24px;margin-right:12%}}
+  /* parte técnica isolada embaixo */
+  .techhead{background:var(--bg2);border-top:3px solid var(--amb);padding:58px 0 8px}
+  .techhead h2{font-family:Sora;margin:.3em 0 0}
+  .techzone{background:var(--bg2)}
+  .caso-cta{display:flex;flex-direction:column;gap:6px;margin-top:26px;background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:20px 22px;color:var(--txt)}
+  .caso-cta:hover{background:var(--bg2)} .caso-cta b{font:800 1.2rem Sora,sans-serif} .caso-cta>span:last-child{color:var(--mut)}
+  .doc{position:relative;background:#f4efe3;color:#1d1a14;border-radius:10px;padding:26px 24px 20px;margin:18px 0;box-shadow:0 24px 60px -30px #000;overflow:hidden}
+  .doc h3{font-family:Sora;font-size:1rem;margin:0 0 .3em;color:#1d1a14}
+  .doc .src{font-size:.82rem;color:#5b5446;margin:0 0 .8em}
+  .doc .src a{color:#854d0e}
+  .doc blockquote{margin:.6em 0;padding:.2em 0 .2em 14px;border-left:3px solid #b91c1c;font-size:.95rem;color:#2a251c}
+  .doc blockquote em{display:block;font-style:normal;color:#5b5446;font-size:.86rem;margin-top:.25em}
+  .stamp{position:absolute;top:14px;right:-6px;transform:rotate(9deg);border:3px solid #b91c1c;color:#b91c1c;font-family:Sora;font-weight:800;font-size:.72rem;letter-spacing:.12em;padding:.35em .7em;border-radius:6px;opacity:.85;background:rgba(244,239,227,.7)}
+  .bars{margin:14px 0 6px}
+  .bar{display:grid;grid-template-columns:150px minmax(0,1fr) 120px;gap:10px;align-items:center;margin:8px 0;font-size:.9rem}
+  .bar .t{height:16px;border-radius:6px;background:var(--line);overflow:hidden}
+  .bar .t i{display:block;height:100%;background:var(--amb);border-radius:6px}
+  .bar .t i.ok{background:#22c55e} .bar .t i.bad{background:#ef4444}
+  .bar .v{font-family:'JetBrains Mono',monospace;font-size:.85rem;text-align:right}
+  .big{font-family:Sora;font-weight:800;font-size:2.4rem;color:var(--amb);line-height:1}
+  @media(max-width:640px){.bar{grid-template-columns:96px minmax(0,1fr) 74px;font-size:.8rem}.doc{padding:18px 16px 16px}.stamp{position:static;display:inline-block;transform:rotate(-3deg);margin:0 0 10px;font-size:.66rem}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">💸</span> fable-barato</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#video">Vídeo</a>
+    <a class="sec" href="#documento">O documento</a>
+    <a class="sec" href="#medimos">O que medimos</a>
+    <a class="sec" href="#regras">O que fazer</a>
+    <a class="sec" href="#tecnico">Kit (técnico)</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/fable-barato" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">fable-barato · kit gratuito · Claude Code</span>
+      <h1>Descobri o documento que mostra como <span class="amb">reduzir o custo do Fable 5.2</span></h1>
+      <p class="lead">Numa sessão com o Fable, toda busca de arquivo que o Claude Code faz roda num modelo caro e come o seu limite sem você ver. A própria Anthropic publicou como evitar. Eu testei: com o <strong>fable-barato</strong>, um kit que põe essa busca no modelo mais barato, ela ficou de 22 a 48 vezes mais barata, com a mesma resposta.</p>
+      <div class="cta">
+        <a class="btn" href="#documento">Ver o documento</a>
+        <a class="btn ghost" href="https://github.com/inematds/fable-barato" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Seu Fable mais barato: o documento oficial da Anthropic, testado. Folha com carimbo vermelho DOCUMENTO OFICIAL ANTHROPIC"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>O Fable 5.2 é o modelo mais forte da Anthropic e também o mais caro: cada token de entrada e de saída custa o dobro do Opus. Quem usa o Claude Code pela assinatura gasta o limite do Fable bem mais rápido do que imagina, porque parte do trabalho roda em modelos que você não escolheu. A Anthropic publicou um documento explicando onde está esse gasto e como cortar. Este guia mostra o que o documento diz, o que nós medimos na prática e o <strong>fable-barato</strong>: um kit gratuito que você instala em um minuto no Claude Code.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Seu Fable mais barato: o que a Anthropic mediu e o que nós medimos. Documento oficial, busca no Haiku, quando dividir, revisor Fable, auditoria, maestro v2" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <span class="chip">Vídeo</span>
+  <h2>Entenda em 5 minutos</h2>
+  <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+  <p class="sub">O vídeo explicando o documento e as medições entra aqui assim que for publicado.</p>
+</div></section>
+
+<section id="documento"><div class="wrap">
+  <span class="chip">O documento</span>
+  <h2>O que a <span class="amb">própria Anthropic</span> escreveu</h2>
+  <p class="sub">São três páginas públicas e oficiais. Não vazou nada: estão no site da Anthropic, só que quase ninguém leu. Abaixo, os trechos que importam, traduzidos, com o link de cada um.</p>
+
+  <div class="doc"><span class="stamp">DOCUMENTO OFICIAL · ANTHROPIC</span>
+    <h3>1. Optimizing for cost and intelligence</h3>
+    <p class="src"><a href="https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence" target="_blank" rel="noopener">platform.claude.com · Otimizando custo e inteligência</a> (em inglês)</p>
+    <blockquote>“Para a maioria dos trabalhos com agentes, comece pelo Claude Opus 5.5 no esforço padrão (medium).”</blockquote>
+    <blockquote>“Use o Claude Fable 5.2 para raciocínio exigente e trabalho de agente de longo prazo, ou quando seus testes com o Opus 5.5 em esforço mais alto ainda não bastarem.”</blockquote>
+    <blockquote>Num teste de pesquisa na web (DeepResearch Bench II, esforço padrão): “o Claude Fable 5.2 custou 2,9 vezes o Claude Opus 5.5, com uma nota 1,9 ponto menor”.<em>É um teste só, de pesquisa. Em trabalho longo e difícil, o mesmo documento diz que o Fable vai mais longe.</em></blockquote>
+    <blockquote>Sobre dividir o trabalho entre um modelo chefe e ajudantes mais baratos: só saiu na frente em dois casos, trabalho rotineiro com “cauda longa de custo” (a maioria das partes sai barata e umas poucas custam muito mais) e trabalho maior que uma janela de contexto (mais do que o modelo consegue ler de uma vez). “Quando o trabalho é uma cadeia de passos dependentes, ou cabe num só contexto sem cauda longa de custo, o modelo chefe sozinho, em esforço menor, saiu na frente em todos os casos medidos.”<em>Medido em modelos anteriores, como o próprio documento avisa.</em></blockquote>
+    <blockquote>Rodar em esforço baixo e refazer em alto só o que falhou resolveu cerca de 97% das tarefas por US$ 0,17 cada. Tudo em alto: 95,3% por US$ 0,29.<em>Opus 5.5, SWE-bench Pro (teste de corrigir defeitos em código real).</em></blockquote>
+    <blockquote>Revisar os prompts a cada modelo novo economizou 14% nas duas trocas de modelo testadas.</blockquote>
+  </div>
+
+  <div class="doc"><span class="stamp">DOCUMENTO OFICIAL · ANTHROPIC</span>
+    <h3>2. Create custom subagents (Claude Code)</h3>
+    <p class="src"><a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">code.claude.com · Subagentes</a> (em inglês)</p>
+    <blockquote>A busca embutida (Explore) usa “o modelo da conversa principal”. Quando a conversa roda no Fable, o Explore roda no Opus ou fica no Fable, conforme a conexão; na assinatura do Claude, roda no Opus.</blockquote>
+    <blockquote>“Um subagente seu chamado Explore substitui o embutido e mantém o próprio campo model; então defina um com model: haiku para rodar a busca num modelo mais barato.”</blockquote>
+    <blockquote>Um ajudante sem o campo <em style="display:inline;color:inherit">model</em> roda no mesmo modelo da conversa que o chamou.</blockquote>
+  </div>
+
+  <div class="doc"><span class="stamp">DOCUMENTO OFICIAL · ANTHROPIC</span>
+    <h3>3. Choosing a Claude model and effort level in Claude Code</h3>
+    <p class="src"><a href="https://claude.com/resources/articles/claude-model-and-effort-level-in-claude-code" target="_blank" rel="noopener">claude.com · Escolhendo modelo e esforço no Claude Code</a> (em inglês)</p>
+    <blockquote>Em trabalho rotineiro, os dois modelos acertam, e o maior gasta mais tokens a um preço maior. Por isso, “descer para o modelo menor nos trechos de rotina economiza dinheiro de verdade, sem custo de qualidade”.</blockquote>
+    <blockquote>O Fable “terminou trabalhos que o Opus e o Sonnet não alcançam em nenhum nível de esforço. Ele também custa mais por token, que é o outro motivo para guardá-lo para o trabalho que precisa dele.”</blockquote>
+  </div>
+</div></section>
+
+<section id="medimos"><div class="wrap">
+  <span class="chip">O que medimos</span>
+  <h2>Não acreditei: <span class="amb">fui medir</span></h2>
+  <p class="sub">Tudo rodou no Claude Code pela assinatura, numa pasta isolada (sem as minhas configurações), em 15/11/2026. Os valores em dólar são o “equivalente de API”: o custo que o próprio Claude Code informa no fim de cada execução (<code>total_cost_usd</code>), calculado pelo preço oficial. Na assinatura, você não paga isso em dinheiro: vira consumo do seu limite. “Esforço” (low, medium, high) é quanto o modelo pensa e confere antes de responder; você escolhe com <code>/effort</code>.</p>
+
+  <h3>1. A busca de arquivo, com e sem o arquivo do kit</h3>
+  <p class="mut">Sessão no Fable 5.2. Pedi para o Claude Code achar uma coisa no código usando a busca embutida. Doze rodadas, seis sem o kit e seis com: oito numa busca simples (no repositório público <a href="https://github.com/inematds/esforco-medido">esforco-medido</a>) e quatro numa busca pesada, num projeto privado de 29 mil linhas.</p>
+  <div class="bars">
+    <div class="bar"><span>Busca no Opus (sem o kit)</span><span class="t"><i class="bad" style="width:100%"></i></span><span class="v">US$ 0,05–0,12</span></div>
+    <div class="bar"><span>Busca no Haiku (com o kit)</span><span class="t"><i class="ok" style="width:3%"></i></span><span class="v">US$ 0,002</span></div>
+  </div>
+  <p><span class="big">22× a 48×</span> <span class="mut">mais barata a busca (em média, umas 35 vezes), com a mesma resposta certa nas 12 rodadas. Comparando cada rodada sem o kit com a sua par com o kit, a busca ficou de 22 a 48 vezes mais barata. A sessão inteira ficou de 28% a 40% mais barata (média de cada série), porque a parte do próprio Fable não muda. A busca simples você refaz com o kit; a pesada rodou num projeto privado, que não vai no repositório.</span></p>
+
+  <h3 style="margin-top:34px">2. Fable chefiando ajudantes compensa?</h3>
+  <p class="mut">A mesma tarefa de três jeitos, duas rodadas cada, com nota dada por um checador que o modelo não vê. Tarefa pequena: corrigir um carrinho de compras (12 testes). Tarefa grande: corrigir 20 módulos independentes, cada um com um defeito.</p>
+  <table class="n">
+    <tr><th>Jeito</th><th>Pequena</th><th>Grande</th><th>Nota</th></tr>
+    <tr><td>Opus 5.5 sozinho (medium)</td><td><strong>US$ 0,19</strong></td><td><strong>US$ 0,42</strong></td><td>máxima nas 4</td></tr>
+    <tr><td>Fable 5.2 sozinho (medium)</td><td>US$ 0,46</td><td>US$ 0,62</td><td>máxima nas 4</td></tr>
+    <tr><td>Fable chefiando ajudantes Sonnet</td><td>US$ 0,83</td><td>US$ 1,01</td><td>máxima nas 4</td></tr>
+  </table>
+  <p style="margin-top:14px">Mesma nota nos três. <strong>Chefiar ajudantes custou de 1,6× a 1,8× o Fable sozinho e de 2,4× a 4,4× o Opus sozinho</strong>, e em geral demorou mais. As duas tarefas cabiam numa sessão, que é exatamente o caso em que o documento diz que dividir perde. Não testamos trabalho maior que uma janela de contexto, onde o documento diz que dividir pode ganhar.</p>
+  <p class="mut">Uma nota honesta: nos 20 módulos, o meu checador marcou 19 de 20 nas seis rodadas. O erro era meu: um teste esperava “De volta”, e a regra escrita pede “De Volta”, que foi o que os seis fizeram. Corrigi o checador (<a href="https://github.com/inematds/fable-barato/blob/main/medicao/resultados/tres-jeitos-vinte-modulos-20261115-042648/NOTA.md">nota nos resultados</a>).</p>
+</div></section>
+
+<section id="regras"><div class="wrap">
+  <span class="chip">O que fazer</span>
+  <h2>Seis regras para pagar o Fable <span class="amb">só onde ele vale</span></h2>
+  <div class="grid g3">
+    <div class="card"><h3>1. Comece no Opus medium</h3><p>É o ponto de partida que a própria Anthropic recomenda. Suba o esforço antes de trocar de modelo.</p></div>
+    <div class="card"><h3>2. Busca no Haiku</h3><p>Um arquivo Explore com o modelo Haiku tira a busca do modelo caro. Foi de 22 a 48 vezes mais barata na nossa medição.</p></div>
+    <div class="card"><h3>3. Ajudante sempre com modelo fixo</h3><p>Ajudante (subagente) é uma segunda cópia do Claude que o Claude Code abre para fazer uma parte do trabalho. Ajudante sem modelo definido herda o da sessão. Se a sessão é Fable, quem só lê arquivo também paga Fable.</p></div>
+    <div class="card"><h3>4. Não divida o que cabe numa sessão</h3><p>Chefiar ajudantes custou de 1,6 a 4,4 vezes mais, pela mesma nota. Divida só quando houver muitas partes independentes e muita leitura.</p></div>
+    <div class="card"><h3>5. Fable para julgar, não para tudo</h3><p>Deixe o Opus fazer o trabalho e chame o Fable só para revisar o que é crítico. Sem exagero: o documento mediu um modelo forte como conselheiro e o ganho foi pequeno, 1,7 ponto por cerca de 2,1 vezes o custo.</p></div>
+    <div class="card"><h3>6. Audite a cada modelo novo</h3><p>Instrução escrita para um modelo antigo faz o novo trabalhar a mais. A Anthropic mediu 14% de economia só com essa revisão.</p></div>
+  </div>
+  <p class="mut" style="margin-top:16px">Quer que o Claude escolha o modelo e o esforço por você? Isso fica no nível 2 do kit, o <a href="https://inematds.github.io/maestro-roteador/guia/">maestro-roteador</a>: uma skill que olha a tarefa e diz qual modelo e qual esforço usar, agora atualizada para o Fable 5.2. <a href="#maestro">Como usar ↓</a></p>
+</div></section>
+
+<div id="tecnico" class="techhead"><div class="wrap">
+  <span class="chip">Parte técnica</span>
+  <h2>O kit: <span class="amb">para quem quer instalar e medir</span></h2>
+  <p class="sub">Daqui para baixo é a parte técnica: instalar, conferir e refazer as medições. Você <strong>não precisa</strong> desta parte para entender o que está acima.</p>
+</div></div>
+
+<div class="techzone">
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Quatro peças, <span class="amb">um instalador</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>🔎 agentes/Explore.md</h3><p>Substitui a busca embutida: só leitura (Read, Glob, Grep), <code>model: haiku</code>, <code>effort: medium</code>.</p></div>
+    <div class="card"><h3>🧭 regras/QUANDO-DIVIDIR.md</h3><p>Bloco para o seu CLAUDE.md: modelo padrão, modelo de cada tipo de ajudante, quando dividir o trabalho e o briefing de 5 itens.</p></div>
+    <div class="card"><h3>🧐 agentes/revisor-fable.md</h3><p>Revisão final no Fable 5.2 (high), só quando você pede “revisão fable”. Não edita nada: aponta o que bloqueia, o que deveria mudar e o que é sugestão.</p></div>
+    <div class="card"><h3>🩺 skill /fable-barato</h3><p><code>status</code> confere a instalação, <code>auditar</code> revisa CLAUDE.md, agentes e skills sem mudar nada, e <code>dividir &lt;tarefa&gt;</code> diz se vale dividir a tarefa.</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que você precisa</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Claude Code</h3><p>Testado na versão 2.1.325, pela assinatura (confira com <code>claude --version</code>; para ver o modelo de cada ajudante no <code>/tasks</code>, use 2.1.242 ou mais nova). O kit roda em Linux e macOS (bash).</p></div>
+    <div class="card"><h3>Python 3 e git</h3><p>O instalador usa Python para tirar e pôr o bloco de regras sem duplicar. As medições rodam só no Linux: precisam de <code>rsync</code>, <code>timeout</code> e do login em <code>~/.claude/.credentials.json</code> (no macOS ele fica no Keychain).</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Em <span class="amb">5 minutos</span></h2>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Baixe e instale</h3>
+    <p>Instala no seu usuário (vale para todos os projetos). Se você já tiver um <code>Explore.md</code> ou um CLAUDE.md, ganham backup com o final <code>.bak-fable-barato</code>. Rodar de novo não duplica nada.</p>
+<pre><span class="c"># opção A: para todos os seus projetos (~/.claude)</span>
+<span class="k">git clone https://github.com/inematds/fable-barato ~/fable-barato</span>
+<span class="k">~/fable-barato/instalar.sh</span></pre>
+<pre><span class="c"># opção B: só num projeto (grava .claude/ e CLAUDE.md dentro dele)</span>
+<span class="k">cd ~/meu-projeto</span>
+<span class="k">~/fable-barato/instalar.sh --projeto</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Confira que a busca foi para o Haiku</h3>
+    <p>Abra o Claude Code de novo, peça uma busca e rode <code>/tasks</code> logo em seguida: o Explore tem que aparecer no Haiku. Um ajudante que terminou fica na lista só uns 30 segundos.</p>
+<pre><span class="c"># dentro do Claude Code</span>
+<span class="s">use o Explore para achar onde a função X é definida</span>
+<span class="k">/tasks</span>
+<span class="k">/fable-barato status</span>      <span class="c"># tabela: Explore, agentes sem model, bloco de regras, esforço</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Use no dia a dia</h3>
+    <p>A regra do CLAUDE.md já orienta o modelo. Os outros comandos ficam à mão.</p>
+<pre><span class="k">/fable-barato dividir</span> <span class="s">"revisar os 40 posts do blog"</span>   <span class="c"># vale dividir? com qual modelo?</span>
+<span class="s">revisão fable</span>                                         <span class="c"># chama o revisor-fable no trabalho pronto</span>
+<span class="k">/fable-barato auditar</span>                                 <span class="c"># auditoria sem mudar nada; aplica só com "aplica"</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Desfazer</h3>
+    <p>Tira o bloco de regras, a skill e o revisor, e devolve o seu <code>Explore.md</code> antigo, se havia um. A cópia <code>CLAUDE.md.bak-fable-barato</code> fica guardada.</p>
+<pre><span class="k">~/fable-barato/instalar.sh --desfazer</span>                          <span class="c"># opção A</span>
+<span class="k">cd ~/meu-projeto &amp;&amp; ~/fable-barato/instalar.sh --desfazer --projeto</span>   <span class="c"># opção B</span></pre>
+  </div></div>
+</div></section>
+
+<section id="maestro"><div class="wrap">
+  <span class="chip">Nível 2 do kit</span>
+  <h2>maestro-roteador: <span class="amb">a escolha de modelo e esforço por tarefa</span></h2>
+  <p class="sub">O maestro é uma skill que lê a tarefa, acha o passo mais difícil e diz qual modelo e qual esforço usar, inclusive para cada ajudante. A versão 1.3 traz as regras do Fable 5.2 deste guia. Ela escolhe sozinha o modelo dos ajudantes; para a sessão em que você está, ela recomenda e você troca com <code>/model</code> e <code>/effort</code>.</p>
+<pre><span class="k">git clone https://github.com/inematds/maestro-roteador</span>
+<span class="k">cp -r maestro-roteador/skills/maestro-roteador ~/.claude/skills/</span>
+<span class="c"># no Claude Code:</span> <span class="s">faz a triagem disso: &lt;sua tarefa&gt;</span></pre>
+</div></section>
+
+<section id="exemplos"><div class="wrap">
+  <span class="chip">Refaça as medições</span>
+  <h2>Meça no <span class="amb">seu</span> projeto</h2>
+  <p class="sub">Os scripts rodam pela sua assinatura, numa pasta temporária (não leem o seu CLAUDE.md, hooks nem plugins). Gastam pouco do limite: a busca, alguns centavos equivalentes por rodada; os 3 jeitos, até US$ 1 por rodada. Sem <code>PEDIDO</code>, a busca procura uma coisa que só existe no projeto de teste (<a href="https://github.com/inematds/esforco-medido">esforco-medido</a>: clone e passe a pasta dele para refazer a nossa medição); com <code>GABARITO=arquivo.txt</code> (uma resposta esperada por linha), o resumo dá a nota.</p>
+<pre><span class="k">cd ~/fable-barato/medicao</span>
+<span class="k">PEDIDO=</span><span class="s">"Use the Explore subagent (do not search yourself) to find where X is defined. Reply only with path:line."</span> \
+  <span class="k">./medir-explore.sh</span> <span class="s">~/meu-projeto</span> 3 fable medium   <span class="c"># troque X por algo do seu projeto</span>
+<span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/carrinho</span> 2                 <span class="c"># Fable só, Opus só, Fable chefiando</span>
+<span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/vinte-modulos</span> 2
+<span class="k">cat</span> <span class="s">resultados/*/resumo.md</span></pre>
+  <p class="mut">Os resultados brutos destas medições estão em <a href="https://github.com/inematds/fable-barato/tree/main/medicao/resultados">medicao/resultados</a>.</p>
+</div></section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Claude Code 2.1.325</div><div class="pill">bash + Python 3</div><div class="pill">medido em 15/11/2026</div>
+    <p style="margin-top:18px">fable-barato — o documento oficial da Anthropic, testado ·
+      <a href="https://github.com/inematds/fable-barato">inematds/fable-barato</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='fable-barato-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

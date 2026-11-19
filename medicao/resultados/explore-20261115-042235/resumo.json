@@ -1,0 +1,54 @@
+[
+ {
+  "rodada": "com-1",
+  "status": "ok 8/8",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1467,
+   "claude-haiku-5-5": 0.0025
+  },
+  "total": 0.1492,
+  "resposta": "(omitida: arquivos de projeto privado)",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "com-2",
+  "status": "ok 8/8",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1427,
+   "claude-haiku-5-5": 0.0021
+  },
+  "total": 0.1448,
+  "resposta": "(omitida: arquivos de projeto privado)",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-1",
+  "status": "ok 8/8",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1462,
+   "claude-opus-5-5": 0.1208
+  },
+  "total": 0.2669,
+  "resposta": "(omitida: arquivos de projeto privado)",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-2",
+  "status": "ok 8/8",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1488,
+   "claude-opus-5-5": 0.0466
+  },
+  "total": 0.1953,
+  "resposta": "(omitida: arquivos de projeto privado)",
+  "subagentes": [
+   "Explore"
+  ]
+ }
+]

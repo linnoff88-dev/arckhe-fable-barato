@@ -1,0 +1,28 @@
+[
+ {
+  "rodada": "com-1",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1247,
+   "claude-haiku-5-5": 0.0021
+  },
+  "total": 0.1268,
+  "resposta": "/tmp/fable-barato-8ykcYI/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ },
+ {
+  "rodada": "sem-1",
+  "status": "ok",
+  "por_modelo": {
+   "claude-fable-5-2": 0.1243,
+   "claude-opus-5-5": 0.0874
+  },
+  "total": 0.2117,
+  "resposta": "/tmp/fable-barato-5egbi2/p/relatorio.py:41",
+  "subagentes": [
+   "Explore"
+  ]
+ }
+]

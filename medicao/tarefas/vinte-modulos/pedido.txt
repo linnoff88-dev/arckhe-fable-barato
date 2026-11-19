@@ -1,0 +1,1 @@
+Este projeto tem 20 módulos independentes (mXX_*.py). Cada um tem a regra na docstring, e vários não seguem a regra. Revise e corrija TODOS os módulos para seguirem exatamente a docstring. Os testes em tests/ são só básicos.

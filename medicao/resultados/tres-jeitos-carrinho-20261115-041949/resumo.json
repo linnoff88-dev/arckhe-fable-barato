@@ -1,0 +1,74 @@
+[
+ {
+  "rodada": "fable-1",
+  "nota": "12/12",
+  "total": 0.643,
+  "por_modelo": {
+   "claude-fable-5-2": 0.643
+  },
+  "tempo_s": "54",
+  "subagentes": {},
+  "ok": true
+ },
+ {
+  "rodada": "fable-2",
+  "nota": "12/12",
+  "total": 0.279,
+  "por_modelo": {
+   "claude-fable-5-2": 0.279
+  },
+  "tempo_s": "38",
+  "subagentes": {},
+  "ok": true
+ },
+ {
+  "rodada": "opus-1",
+  "nota": "12/12",
+  "total": 0.184,
+  "por_modelo": {
+   "claude-opus-5-5": 0.184
+  },
+  "tempo_s": "50",
+  "subagentes": {},
+  "ok": true
+ },
+ {
+  "rodada": "opus-2",
+  "nota": "12/12",
+  "total": 0.19,
+  "por_modelo": {
+   "claude-opus-5-5": 0.19
+  },
+  "tempo_s": "48",
+  "subagentes": {},
+  "ok": true
+ },
+ {
+  "rodada": "orquestra-1",
+  "nota": "12/12",
+  "total": 0.924,
+  "por_modelo": {
+   "claude-fable-5-2": 0.78,
+   "claude-sonnet-5-5": 0.144
+  },
+  "tempo_s": "124",
+  "subagentes": {
+   "sonnet": 4
+  },
+  "ok": true
+ },
+ {
+  "rodada": "orquestra-2",
+  "nota": "12/12",
+  "total": 0.731,
+  "por_modelo": {
+   "claude-fable-5-2": 0.624,
+   "claude-sonnet-5-5": 0.107
+  },
+  "tempo_s": "104",
+  "subagentes": {
+   "sonnet": 3
+  },
+  "ok": true
+ }
+]
