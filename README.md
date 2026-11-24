@@ -1,4 +1,4 @@
-﻿# fable-barato
+# fable-barato
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,7 +6,7 @@
 </div>
 
 
-[![Seu Fable mais barato](guia/assets/banner.jpg)](https://inematds.github.io/fable-barato/guia/)
+[![Seu Fable mais barato](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
@@ -16,7 +16,7 @@ O Fable 5.2 Ã© o modelo mais forte da Anthropic e tambÃ©m o mais caro: cada 
 
 ## ðŸ“– Guia de uso
 
-Guia completo (o documento oficial, as mediÃ§Ãµes e o passo a passo): **https://inematds.github.io/fable-barato/guia/**
+Guia completo (o documento oficial, as mediÃ§Ãµes e o passo a passo): **https://linnoff88-dev.github.io/
 
 ## O que medimos (15/11/2026, Claude Code 2.1.325, pela assinatura, pasta isolada)
 
@@ -45,7 +45,7 @@ Os valores sÃ£o o "equivalente de API" que o Claude Code informa (na assinatur
 
 | # | Passo | Comando | Quem |
 |---|---|---|---|
-| 1 | Baixar o kit | `git clone https://github.com/inematds/fable-barato ~/fable-barato` | ðŸ§  vocÃª |
+| 1 | Baixar o kit | `git clone https://github.com/linnoff88-dev/fable-barato ~/fable-barato` | ðŸ§  vocÃª |
 | 2 | Instalar: para todos os projetos, ou sÃ³ num projeto | `~/fable-barato/instalar.sh` ou `cd ~/meu-projeto && ~/fable-barato/instalar.sh --projeto` | âš™ï¸ script |
 | 3 | Conferir a busca no Haiku | no Claude Code: peÃ§a uma busca, rode `/tasks` e `/fable-barato status` | ðŸ§  vocÃª |
 | 4 | Trabalhar no dia a dia | a regra do CLAUDE.md orienta modelo, esforÃ§o e quando dividir | ðŸ¤– Claude Code |
@@ -59,11 +59,11 @@ Testes do kit (nunca tocam o seu `~/.claude`): `bash tests/rodar.sh`.
 
 ## NÃ­vel 2: maestro-roteador
 
-Para escolher modelo e esforÃ§o por tarefa (inclusive de cada ajudante), use o [maestro-roteador](https://github.com/inematds/maestro-roteador), versÃ£o 1.3 com as regras do Fable 5.2.
+Para escolher modelo e esforÃ§o por tarefa (inclusive de cada ajudante), use o [maestro-roteador](https://github.com/linnoff88-dev/maestro-roteador), versÃ£o 1.3 com as regras do Fable 5.2.
 
 ## LicenÃ§a
 
-MIT. GrÃ¡tis no [INEMA.CLUB](https://inema.club).
+MIT. GrÃ¡tis no [ARCKHÉ AI](https://ARCKHÉ AI).
 
 ---
 

@@ -1,6 +1,6 @@
 # fable-barato
 
-[![Your cheaper Fable](guia/assets/banner-en.jpg)](https://inematds.github.io/fable-barato/guia/en/)
+[![Your cheaper Fable](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,7 +10,7 @@ Fable 5.2 is Anthropic’s strongest model and also its most expensive: each inp
 
 ## 📖 User guide
 
-Complete guide (the official document, the measurements, and the step-by-step instructions): **https://inematds.github.io/fable-barato/guia/en/**
+Complete guide (the official document, the measurements, and the step-by-step instructions): **https://linnoff88-dev.github.io/
 
 ## What we measured (11/15/2026, Claude Code 2.1.325, subscription, isolated folder)
 
@@ -39,7 +39,7 @@ The values are the “API equivalent” reported by Claude Code (on a subscripti
 
 | # | Step | Command | Who |
 |---|---|---|---|
-| 1 | Download the kit | `git clone https://github.com/inematds/fable-barato ~/fable-barato` | 🧠 you |
+| 1 | Download the kit | `git clone https://github.com/linnoff88-dev/fable-barato ~/fable-barato` | 🧠 you |
 | 2 | Install: for all projects, or just one project | `~/fable-barato/instalar.sh` or `cd ~/my-project && ~/fable-barato/instalar.sh --projeto` | ⚙️ script |
 | 3 | Check the search on Haiku | In Claude Code: ask for a search, run `/tasks` and `/fable-barato status` | 🧠 you |
 | 4 | Work day to day | The `CLAUDE.md` rule guides model and effort selection, and when to split tasks | 🤖 Claude Code |
@@ -53,8 +53,8 @@ Kit tests (never touch your `~/.claude`): `bash tests/rodar.sh`.
 
 ## Level 2: maestro-roteador
 
-To choose a model and effort for each task (including each helper), use [maestro-roteador](https://github.com/inematds/maestro-roteador), version 1.3 with the Fable 5.2 rules.
+To choose a model and effort for each task (including each helper), use [maestro-roteador](https://github.com/linnoff88-dev/maestro-roteador), version 1.3 with the Fable 5.2 rules.
 
 ## License
 
-MIT. Free on [INEMA.CLUB](https://inema.club).
+MIT. Free on [ARCKHÉ AI](https://ARCKHÉ AI).

@@ -9,9 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fable-barato — I found the document that shows how to reduce the cost of Fable 5.2</title>
 <meta name="description" content="Free kit for Claude Code: Anthropic's official document on the cost of Fable 5.2, measured in practice. Haiku search is 22 to 48 times cheaper, when to split work, Fable reviewer, and auditing.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/fable-barato/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/fable-barato/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/fable-barato/guia/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/
+<link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/
+<link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -43,8 +43,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .ARCKHÉ{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .ARCKHÉ:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -263,9 +263,9 @@
   <a class="brand" href="#top"><span class="emoji">💸</span> fable-barato</a>
   <span class="sep">|</span>
   <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <a class="ARCKHÉ" href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>
     <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+    <a class="pro" href="https://ARCKHÉ.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
     <a class="sec" href="#video">Video</a>
@@ -275,7 +275,7 @@
     <a class="sec" href="#tecnico">Kit (technical)</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    <a class="btn" href="https://github.com/inematds/fable-barato" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/linnoff88-dev/fable-barato" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -288,7 +288,7 @@
       <p class="lead">In a Fable session, every file search Claude Code runs uses an expensive model and eats into your limit without you seeing it. Anthropic published a guide on how to avoid that. I tested it: with <strong>fable-barato</strong>, a kit that runs those searches on the cheapest model, they became 22 to 48 times cheaper with the same answer.</p>
       <div class="cta">
         <a class="btn" href="#documento">View the document</a>
-        <a class="btn ghost" href="https://github.com/inematds/fable-barato" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn ghost" href="https://github.com/linnoff88-dev/fable-barato" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>
     <figure><img src="../assets/banner-en.jpg" alt="Use Fable for less: Anthropic's official document, tested. Page with a red OFFICIAL ANTHROPIC DOCUMENT stamp"></figure>
@@ -346,7 +346,7 @@
   <p class="sub">Everything ran in Claude Code with a subscription, in an isolated folder (without my settings), on 11/15/2026. Dollar amounts are the “API equivalent”: the cost Claude Code itself reports at the end of each run (<code>total_cost_usd</code>), calculated using the official price. With a subscription, you don't pay this in cash; it counts against your usage limit. “Effort” (low, medium, high) is how much the model thinks and checks before answering; you choose it with <code>/effort</code>.</p>
 
   <h3>1. File search, with and without the kit file</h3>
-  <p class="mut">Fable 5.2 session. I asked Claude Code to find something in the code using built-in search. Twelve runs, six without the kit and six with it: eight on a simple search (in the public repository <a href="https://github.com/inematds/esforco-medido">esforco-medido</a>) and four on a heavy search in a private 29,000-line project.</p>
+  <p class="mut">Fable 5.2 session. I asked Claude Code to find something in the code using built-in search. Twelve runs, six without the kit and six with it: eight on a simple search (in the public repository <a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>) and four on a heavy search in a private 29,000-line project.</p>
   <div class="bars">
     <div class="bar"><span>Opus search (without the kit)</span><span class="t"><i class="bad" style="width:100%"></i></span><span class="v">US$ 0.05–0.12</span></div>
     <div class="bar"><span>Haiku search (with the kit)</span><span class="t"><i class="ok" style="width:3%"></i></span><span class="v">US$ 0.002</span></div>
@@ -362,7 +362,7 @@
     <tr><td>Fable leading Sonnet helpers</td><td>US$ 0.83</td><td>US$ 1.01</td><td>maximum in all 4</td></tr>
   </table>
   <p style="margin-top:14px">Same score for all three. <strong>Leading helpers cost 1.6× to 1.8× as much as Fable alone and 2.4× to 4.4× as much as Opus alone</strong>, and generally took longer. Both tasks fit in one session, exactly the case where the document says splitting loses. We didn't test work larger than a context window, where the document says splitting may win.</p>
-  <p class="mut">An honest note: on the 20 modules, my checker marked 19 out of 20 in all six runs. The mistake was mine: one test expected “Back”, while the written rule says “Back”, which is what all six produced. I corrected the checker (<a href="https://github.com/inematds/fable-barato/blob/main/medicao/resultados/tres-jeitos-vinte-modulos-20261115-042648/NOTA.md">note in the results</a>).</p>
+  <p class="mut">An honest note: on the 20 modules, my checker marked 19 out of 20 in all six runs. The mistake was mine: one test expected “Back”, while the written rule says “Back”, which is what all six produced. I corrected the checker (<a href="https://github.com/linnoff88-dev/fable-barato/blob/main/medicao/resultados/tres-jeitos-vinte-modulos-20261115-042648/NOTA.md">note in the results</a>).</p>
 </div></section>
 
 <section id="regras"><div class="wrap">
@@ -376,7 +376,7 @@
     <div class="card"><h3>5. Use Fable to judge, not for everything</h3><p>Let Opus do the work and call Fable only to review what's critical. Don't overdo it: the document measured a strong model as an advisor and the gain was small, 1.7 points for about 2.1 times the cost.</p></div>
     <div class="card"><h3>6. Audit with every new model</h3><p>Instructions written for an older model can make a newer one do extra work. Anthropic measured 14% savings from this review alone.</p></div>
   </div>
-  <p class="mut" style="margin-top:16px">Want Claude to choose the model and effort for you? That's level 2 of the kit, <a href="https://inematds.github.io/maestro-roteador/guia/en/">maestro-roteador</a>: a skill that looks at the task and tells you which model and effort to use, now updated for Fable 5.2. <a href="#maestro">How to use it ↓</a></p>
+  <p class="mut" style="margin-top:16px">Want Claude to choose the model and effort for you? That's level 2 of the kit, <a href="https://linnoff88-dev.github.io/ a skill that looks at the task and tells you which model and effort to use, now updated for Fable 5.2. <a href="#maestro">How to use it ↓</a></p>
 </div></section>
 
 <div id="tecnico" class="techhead"><div class="wrap">
@@ -414,7 +414,7 @@
     <h3>Download and install</h3>
     <p>Installs for your user (applies to all projects). If you already have an <code>Explore.md</code> or CLAUDE.md, it backs them up with the suffix <code>.bak-fable-barato</code>. Running it again won't duplicate anything.</p>
 <pre><span class="c"># option A: for all your projects (~/.claude)</span>
-<span class="k">git clone https://github.com/inematds/fable-barato ~/fable-barato</span>
+<span class="k">git clone https://github.com/linnoff88-dev/fable-barato ~/fable-barato</span>
 <span class="k">~/fable-barato/instalar.sh</span></pre>
 <pre><span class="c"># option B: for one project only (writes .claude/ and CLAUDE.md inside it)</span>
 <span class="k">cd ~/meu-projeto</span>
@@ -450,7 +450,7 @@
   <span class="chip">Kit level 2</span>
   <h2>maestro-roteador: <span class="amb">choosing a model and effort for each task</span></h2>
   <p class="sub">The maestro is a skill that reads the task, finds the hardest step, and tells you which model and effort to use, including for each helper. Version 1.3 includes the Fable 5.2 rules from this guide. It chooses helper models automatically; for your current session, it makes a recommendation and you switch with <code>/model</code> and <code>/effort</code>.</p>
-<pre><span class="k">git clone https://github.com/inematds/maestro-roteador</span>
+<pre><span class="k">git clone https://github.com/linnoff88-dev/maestro-roteador</span>
 <span class="k">cp -r maestro-roteador/skills/maestro-roteador ~/.claude/skills/</span>
 <span class="c"># in Claude Code:</span> <span class="s">triage this: &lt;your task&gt;</span></pre>
 </div></section>
@@ -458,14 +458,14 @@
 <section id="exemplos"><div class="wrap">
   <span class="chip">Repeat the measurements</span>
   <h2>Measure in <span class="amb">your</span> project</h2>
-  <p class="sub">The scripts run through your subscription in a temporary folder (they don't read your CLAUDE.md, hooks, or plugins). They use little of your limit: the search costs a few equivalent cents per run; the three approaches cost up to US$ 1 per run. Without <code>PEDIDO</code>, the search looks for something that exists only in the test project (<a href="https://github.com/inematds/esforco-medido">esforco-medido</a>: clone it and pass its folder to repeat our measurement); with <code>GABARITO=arquivo.txt</code> (one expected answer per line), the summary gives you the score.</p>
+  <p class="sub">The scripts run through your subscription in a temporary folder (they don't read your CLAUDE.md, hooks, or plugins). They use little of your limit: the search costs a few equivalent cents per run; the three approaches cost up to US$ 1 per run. Without <code>PEDIDO</code>, the search looks for something that exists only in the test project (<a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>: clone it and pass its folder to repeat our measurement); with <code>GABARITO=arquivo.txt</code> (one expected answer per line), the summary gives you the score.</p>
 <pre><span class="k">cd ~/fable-barato/medicao</span>
 <span class="k">PEDIDO=</span><span class="s">"Use the Explore subagent (do not search yourself) to find where X is defined. Reply only with path:line."</span> \
   <span class="k">./medir-explore.sh</span> <span class="s">~/meu-projeto</span> 3 fable medium   <span class="c"># replace X with something from your project</span>
 <span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/carrinho</span> 2                 <span class="c"># Fable alone, Opus alone, Fable leading</span>
 <span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/vinte-modulos</span> 2
 <span class="k">cat</span> <span class="s">resultados/*/resumo.md</span></pre>
-  <p class="mut">The raw results of these measurements are in <a href="https://github.com/inematds/fable-barato/tree/main/medicao/resultados">medicao/resultados</a>.</p>
+  <p class="mut">The raw results of these measurements are in <a href="https://github.com/linnoff88-dev/fable-barato/tree/main/medicao/resultados">medicao/resultados</a>.</p>
 </div></section>
 </div>
 
@@ -473,8 +473,8 @@
   <div class="wrap">
     <div class="pill">Claude Code 2.1.325</div><div class="pill">bash + Python 3</div><div class="pill">measured on 11/15/2026</div>
     <p style="margin-top:18px">fable-barato — Anthropic's official document, tested ·
-      <a href="https://github.com/inematds/fable-barato">inematds/fable-barato</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+      <a href="https://github.com/linnoff88-dev/fable-barato">linnoff88-dev/fable-barato</a> ·
+      <a href="https://ARCKHÉ AI">ARCKHÉ AI</a></p>
   </div>
 </footer>
 

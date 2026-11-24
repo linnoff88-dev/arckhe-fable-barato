@@ -1,6 +1,6 @@
 # fable-barato
 
-[![Tu Fable más barato](guia/assets/banner-es.jpg)](https://inematds.github.io/fable-barato/guia/es/)
+[![Tu Fable más barato](guia/assets/banner-es.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,7 +10,7 @@ Fable 5.2 es el modelo más potente de Anthropic y también el más caro: cada t
 
 ## 📖 Guía de uso
 
-Guía completa (el documento oficial, las mediciones y el paso a paso): **https://inematds.github.io/fable-barato/guia/es/**
+Guía completa (el documento oficial, las mediciones y el paso a paso): **https://linnoff88-dev.github.io/
 
 ## Lo que medimos (15/11/2026, Claude Code 2.1.325, con la suscripción, en una carpeta aislada)
 
@@ -39,7 +39,7 @@ Los valores son el «equivalente de API» que informa Claude Code (con la suscri
 
 | # | Paso | Comando | Quién |
 |---|---|---|---|
-| 1 | Descargar el kit | `git clone https://github.com/inematds/fable-barato ~/fable-barato` | 🧠 tú |
+| 1 | Descargar el kit | `git clone https://github.com/linnoff88-dev/fable-barato ~/fable-barato` | 🧠 tú |
 | 2 | Instalar: para todos los proyectos o solo en uno | `~/fable-barato/instalar.sh` o `cd ~/meu-projeto && ~/fable-barato/instalar.sh --projeto` | ⚙️ script |
 | 3 | Comprobar la búsqueda en Haiku | En Claude Code: pide una búsqueda, ejecuta `/tasks` y `/fable-barato status` | 🧠 tú |
 | 4 | Trabajar en el día a día | La regla del CLAUDE.md orienta sobre el modelo, el esfuerzo y cuándo dividir | 🤖 Claude Code |
@@ -53,8 +53,8 @@ Pruebas del kit (nunca tocan tu `~/.claude`): `bash tests/rodar.sh`.
 
 ## Nivel 2: maestro-roteador
 
-Para elegir el modelo y el esfuerzo por tarea (incluidos los de cada asistente), usa [maestro-roteador](https://github.com/inematds/maestro-roteador), versión 1.3 con las reglas de Fable 5.2.
+Para elegir el modelo y el esfuerzo por tarea (incluidos los de cada asistente), usa [maestro-roteador](https://github.com/linnoff88-dev/maestro-roteador), versión 1.3 con las reglas de Fable 5.2.
 
 ## Licencia
 
-MIT. Gratis en [INEMA.CLUB](https://inema.club).
+MIT. Gratis en [ARCKHÉ AI](https://ARCKHÉ AI).
