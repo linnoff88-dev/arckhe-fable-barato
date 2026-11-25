@@ -3,7 +3,7 @@
 #   fable     = Fable 5.2 medium sozinho (sem subagentes)
 #   opus      = Opus 5.5 medium sozinho (sem subagentes)
 #   orquestra = Fable 5.2 medium chefiando subagentes mais baratos (Haiku/Sonnet) e revisando no fim
-# Cada rodada recebe cópia limpa de projeto/; nota pelo checador oculto (o modelo não vê).
+# Cada rodada recebe cópia limpa de projeto/; nota pelo checador oculto (o modelo nêo vê).
 # Uso: ./medir-3jeitos.sh <pasta-tarefa com projeto/ pedido.txt oculto/checar.py> [repeticoes] [jeitos]
 # Ex.: ./medir-3jeitos.sh tarefas/vinte-modulos 2 fable,opus,orquestra
 set -uo pipefail
@@ -12,7 +12,7 @@ T=$(cd "${1:?pasta da tarefa}" && pwd); REP=${2:-2}; JEITOS=${3:-fable,opus,orqu
 CRED="$HOME/.claude/.credentials.json"; [ -f "$CRED" ] || { echo "sem $CRED" >&2; exit 2; }
 unset ANTHROPIC_API_KEY
 PEDIDO=$(cat "$T/pedido.txt")
-ORQ="Trabalhe como ORQUESTRADOR: planeje, divida as partes independentes e delegue cada parte a um subagente pela ferramenta Agent, escolhendo o modelo pelo trabalho (haiku para ler e resumir, sonnet para corrigir código). Cada subagente recebe um briefing completo: objetivo, resultado esperado, regras, o que não fazer e o que fazer se travar. No fim, revise você mesmo o trabalho deles e corrija o que faltar."
+ORQ="Trabalhe como ORQUESTRADOR: planeje, divida as partes independentes e delegue cada parte a um subagente pela ferramenta Agent, escolhendo o modelo pelo trabalho (haiku para ler e resumir, sonnet para corrigir código). Cada subagente recebe um briefing completo: objetivo, resultado esperado, regras, o que nêo fazer e o que fazer se travar. No fim, revise você mesmo o trabalho deles e corrija o que faltar."
 SAI="$AQUI/resultados/tres-jeitos-$(basename "$T")-$(date +%Y%m%d-%H%M%S)"; mkdir -p "$SAI"
 echo "claude=$(claude --version | head -1) tarefa=$(basename "$T") rep=$REP jeitos=$JEITOS" > "$SAI/config.txt"
 for r in $(seq 1 "$REP"); do

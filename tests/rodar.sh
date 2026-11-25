@@ -24,11 +24,11 @@ CLAUDE_HOME_DIR=$H bash "$KIT/instalar.sh" >/dev/null && CLAUDE_HOME_DIR=$H bash
 [ "$(grep -c 'fable-barato:inicio' "$H/CLAUDE.md")" = 1 ] && ok "instalar 2×: bloco uma vez só" || ko "instalar duplicou bloco"
 grep -q 'minhas regras' "$H/CLAUDE.md" && ok "instalar: preserva CLAUDE.md" || ko "instalar apagou CLAUDE.md"
 grep -q '^description: meu' "$H/agents/Explore.md.bak-fable-barato" && ok "instalar: backup do Explore antigo" || ko "sem backup do Explore"
-cmp -s "$KIT/agentes/Explore.md" "$H/agents/Explore.md" && ok "instalar: Explore novo no lugar" || ko "Explore não instalado"
-[ -f "$H/skills/fable-barato/SKILL.md" ] && [ -f "$H/skills/fable-barato/AUDITAR.md" ] && ok "instalar: skill + AUDITAR" || ko "skill não instalada"
+cmp -s "$KIT/agentes/Explore.md" "$H/agents/Explore.md" && ok "instalar: Explore novo no lugar" || ko "Explore nêo instalado"
+[ -f "$H/skills/fable-barato/SKILL.md" ] && [ -f "$H/skills/fable-barato/AUDITAR.md" ] && ok "instalar: skill + AUDITAR" || ko "skill nêo instalada"
 CLAUDE_HOME_DIR=$H bash "$KIT/instalar.sh" --desfazer >/dev/null
 grep -q 'fable-barato' "$H/CLAUDE.md" && ko "desfazer deixou o bloco" || ok "desfazer: tira o bloco"
-grep -q '^description: meu' "$H/agents/Explore.md" && ok "desfazer: devolve Explore antigo" || ko "desfazer não devolveu"
+grep -q '^description: meu' "$H/agents/Explore.md" && ok "desfazer: devolve Explore antigo" || ko "desfazer nêo devolveu"
 [ -f "$H/agents/revisor-fable.md" ] && ko "desfazer deixou revisor" || ok "desfazer: tira revisor"
 P=$(mktemp -d); (cd "$P" && bash "$KIT/instalar.sh" --projeto >/dev/null)
 [ -f "$P/.claude/skills/fable-barato/SKILL.md" ] && [ -f "$P/.claude/agents/Explore.md" ] && grep -q fable-barato "$P/CLAUDE.md" && ok "instalar --projeto: skill + agentes + regras" || ko "instalar --projeto incompleto"

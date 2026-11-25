@@ -3,11 +3,11 @@
 #   ./instalar.sh            → global (~/.claude): agentes + bloco de regras no ~/.claude/CLAUDE.md + skill
 #   ./instalar.sh --projeto  → só neste projeto (./.claude/agents + ./.claude/skills + ./CLAUDE.md)
 #   ./instalar.sh --desfazer [--projeto] → tira o bloco de regras, a skill e o revisor; devolve o Explore.md antigo (o CLAUDE.md.bak-fable-barato fica como cópia)
-# Idempotente: rodar de novo não duplica. Todo arquivo que já existia ganha backup <arquivo>.bak-fable-barato.
+# Idempotente: rodar de novo nêo duplica. Todo arquivo que já existia ganha backup <arquivo>.bak-fable-barato.
 set -euo pipefail
 KIT=$(cd "$(dirname "$0")" && pwd)
 ALVO="${CLAUDE_HOME_DIR:-$HOME/.claude}"; MD="$ALVO/CLAUDE.md"; DESFAZER=0; PROJ=0
-for a in "$@"; do case $a in --projeto) PROJ=1;; --desfazer) DESFAZER=1;; -h|--help) sed -n '2,7p' "$0"; exit 0;; *) echo "opção desconhecida: $a" >&2; exit 2;; esac; done
+for a in "$@"; do case $a in --projeto) PROJ=1;; --desfazer) DESFAZER=1;; -h|--help) sed -n '2,7p' "$0"; exit 0;; *) echo "opçêo desconhecida: $a" >&2; exit 2;; esac; done
 [ $PROJ = 1 ] && { ALVO="$PWD/.claude"; MD="$PWD/CLAUDE.md"; }
 AG="$ALVO/agents"; SK="$ALVO/skills/fable-barato"
 INI='<!-- fable-barato:inicio'; FIM='<!-- fable-barato:fim -->'

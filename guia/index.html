@@ -110,7 +110,7 @@
   table.n{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:10px}
   table.n th,table.n td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
   table.n th{color:var(--amb);font-family:Sora}
-  /* gráficos comparativos (âmbar = agora/realidade, azul = antes/cenário, hachura = projeção) */
+  /* gráficos comparativos (âmbar = agora/realidade, azul = antes/cenário, hachura = projeçêo) */
   :root{--c-now:#BF8224;--c-old:#4D8FE0}
   body.light{--c-now:#B9791D;--c-old:#2F6FC4}
   .charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -191,7 +191,7 @@
   .ov .band em{top:auto;bottom:6px}
   .exp{color:var(--mut);font-size:.86rem;margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line)}
   .exp b{color:var(--amb)}
-  /* plano de ação + animação da janela */
+  /* plano de açêo + animaçêo da janela */
   .anim{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;margin-bottom:34px}
   .an-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:26px}
   .clk{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--mut)} .clk b{color:var(--amb)}
@@ -285,7 +285,7 @@
     <div>
       <span class="chip">fable-barato · kit gratuito · Claude Code</span>
       <h1>Descobri o documento que mostra como <span class="amb">reduzir o custo do Fable 5.2</span></h1>
-      <p class="lead">Numa sessão com o Fable, toda busca de arquivo que o Claude Code faz roda num modelo caro e come o seu limite sem você ver. A própria Anthropic publicou como evitar. Eu testei: com o <strong>fable-barato</strong>, um kit que põe essa busca no modelo mais barato, ela ficou de 22 a 48 vezes mais barata, com a mesma resposta.</p>
+      <p class="lead">Numa sessêo com o Fable, toda busca de arquivo que o Claude Code faz roda num modelo caro e come o seu limite sem você ver. A própria Anthropic publicou como evitar. Eu testei: com o <strong>fable-barato</strong>, um kit que põe essa busca no modelo mais barato, ela ficou de 22 a 48 vezes mais barata, com a mesma resposta.</p>
       <div class="cta">
         <a class="btn" href="#documento">Ver o documento</a>
         <a class="btn ghost" href="https://github.com/linnoff88-dev/fable-barato" target="_blank" rel="noopener">Ver no GitHub</a>
@@ -297,7 +297,7 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">Em resumo</span>
-  <p>O Fable 5.2 é o modelo mais forte da Anthropic e também o mais caro: cada token de entrada e de saída custa o dobro do Opus. Quem usa o Claude Code pela assinatura gasta o limite do Fable bem mais rápido do que imagina, porque parte do trabalho roda em modelos que você não escolheu. A Anthropic publicou um documento explicando onde está esse gasto e como cortar. Este guia mostra o que o documento diz, o que nós medimos na prática e o <strong>fable-barato</strong>: um kit gratuito que você instala em um minuto no Claude Code.</p>
+  <p>O Fable 5.2 é o modelo mais forte da Anthropic e também o mais caro: cada token de entrada e de saída custa o dobro do Opus. Quem usa o Claude Code pela assinatura gasta o limite do Fable bem mais rápido do que imagina, porque parte do trabalho roda em modelos que você nêo escolheu. A Anthropic publicou um documento explicando onde está esse gasto e como cortar. Este guia mostra o que o documento diz, o que nós medimos na prática e o <strong>fable-barato</strong>: um kit gratuito que você instala em um minuto no Claude Code.</p>
   <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Seu Fable mais barato: o que a Anthropic mediu e o que nós medimos. Documento oficial, busca no Haiku, quando dividir, revisor Fable, auditoria, maestro v2" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
@@ -311,14 +311,14 @@
 <section id="documento"><div class="wrap">
   <span class="chip">O documento</span>
   <h2>O que a <span class="amb">própria Anthropic</span> escreveu</h2>
-  <p class="sub">São três páginas públicas e oficiais. Não vazou nada: estão no site da Anthropic, só que quase ninguém leu. Abaixo, os trechos que importam, traduzidos, com o link de cada um.</p>
+  <p class="sub">Sêo três páginas públicas e oficiais. Nêo vazou nada: estêo no site da Anthropic, só que quase ninguém leu. Abaixo, os trechos que importam, traduzidos, com o link de cada um.</p>
 
   <div class="doc"><span class="stamp">DOCUMENTO OFICIAL · ANTHROPIC</span>
     <h3>1. Optimizing for cost and intelligence</h3>
     <p class="src"><a href="https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence" target="_blank" rel="noopener">platform.claude.com · Otimizando custo e inteligência</a> (em inglês)</p>
-    <blockquote>“Para a maioria dos trabalhos com agentes, comece pelo Claude Opus 5.5 no esforço padrão (medium).”</blockquote>
-    <blockquote>“Use o Claude Fable 5.2 para raciocínio exigente e trabalho de agente de longo prazo, ou quando seus testes com o Opus 5.5 em esforço mais alto ainda não bastarem.”</blockquote>
-    <blockquote>Num teste de pesquisa na web (DeepResearch Bench II, esforço padrão): “o Claude Fable 5.2 custou 2,9 vezes o Claude Opus 5.5, com uma nota 1,9 ponto menor”.<em>É um teste só, de pesquisa. Em trabalho longo e difícil, o mesmo documento diz que o Fable vai mais longe.</em></blockquote>
+    <blockquote>“Para a maioria dos trabalhos com agentes, comece pelo Claude Opus 5.5 no esforço padrêo (medium).”</blockquote>
+    <blockquote>“Use o Claude Fable 5.2 para raciocínio exigente e trabalho de agente de longo prazo, ou quando seus testes com o Opus 5.5 em esforço mais alto ainda nêo bastarem.”</blockquote>
+    <blockquote>Num teste de pesquisa na web (DeepResearch Bench II, esforço padrêo): “o Claude Fable 5.2 custou 2,9 vezes o Claude Opus 5.5, com uma nota 1,9 ponto menor”.<em>É um teste só, de pesquisa. Em trabalho longo e difícil, o mesmo documento diz que o Fable vai mais longe.</em></blockquote>
     <blockquote>Sobre dividir o trabalho entre um modelo chefe e ajudantes mais baratos: só saiu na frente em dois casos, trabalho rotineiro com “cauda longa de custo” (a maioria das partes sai barata e umas poucas custam muito mais) e trabalho maior que uma janela de contexto (mais do que o modelo consegue ler de uma vez). “Quando o trabalho é uma cadeia de passos dependentes, ou cabe num só contexto sem cauda longa de custo, o modelo chefe sozinho, em esforço menor, saiu na frente em todos os casos medidos.”<em>Medido em modelos anteriores, como o próprio documento avisa.</em></blockquote>
     <blockquote>Rodar em esforço baixo e refazer em alto só o que falhou resolveu cerca de 97% das tarefas por US$ 0,17 cada. Tudo em alto: 95,3% por US$ 0,29.<em>Opus 5.5, SWE-bench Pro (teste de corrigir defeitos em código real).</em></blockquote>
     <blockquote>Revisar os prompts a cada modelo novo economizou 14% nas duas trocas de modelo testadas.</blockquote>
@@ -327,8 +327,8 @@
   <div class="doc"><span class="stamp">DOCUMENTO OFICIAL · ANTHROPIC</span>
     <h3>2. Create custom subagents (Claude Code)</h3>
     <p class="src"><a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">code.claude.com · Subagentes</a> (em inglês)</p>
-    <blockquote>A busca embutida (Explore) usa “o modelo da conversa principal”. Quando a conversa roda no Fable, o Explore roda no Opus ou fica no Fable, conforme a conexão; na assinatura do Claude, roda no Opus.</blockquote>
-    <blockquote>“Um subagente seu chamado Explore substitui o embutido e mantém o próprio campo model; então defina um com model: haiku para rodar a busca num modelo mais barato.”</blockquote>
+    <blockquote>A busca embutida (Explore) usa “o modelo da conversa principal”. Quando a conversa roda no Fable, o Explore roda no Opus ou fica no Fable, conforme a conexêo; na assinatura do Claude, roda no Opus.</blockquote>
+    <blockquote>“Um subagente seu chamado Explore substitui o embutido e mantém o próprio campo model; entêo defina um com model: haiku para rodar a busca num modelo mais barato.”</blockquote>
     <blockquote>Um ajudante sem o campo <em style="display:inline;color:inherit">model</em> roda no mesmo modelo da conversa que o chamou.</blockquote>
   </div>
 
@@ -336,32 +336,32 @@
     <h3>3. Choosing a Claude model and effort level in Claude Code</h3>
     <p class="src"><a href="https://claude.com/resources/articles/claude-model-and-effort-level-in-claude-code" target="_blank" rel="noopener">claude.com · Escolhendo modelo e esforço no Claude Code</a> (em inglês)</p>
     <blockquote>Em trabalho rotineiro, os dois modelos acertam, e o maior gasta mais tokens a um preço maior. Por isso, “descer para o modelo menor nos trechos de rotina economiza dinheiro de verdade, sem custo de qualidade”.</blockquote>
-    <blockquote>O Fable “terminou trabalhos que o Opus e o Sonnet não alcançam em nenhum nível de esforço. Ele também custa mais por token, que é o outro motivo para guardá-lo para o trabalho que precisa dele.”</blockquote>
+    <blockquote>O Fable “terminou trabalhos que o Opus e o Sonnet nêo alcançam em nenhum nível de esforço. Ele também custa mais por token, que é o outro motivo para guardá-lo para o trabalho que precisa dele.”</blockquote>
   </div>
 </div></section>
 
 <section id="medimos"><div class="wrap">
   <span class="chip">O que medimos</span>
-  <h2>Não acreditei: <span class="amb">fui medir</span></h2>
-  <p class="sub">Tudo rodou no Claude Code pela assinatura, numa pasta isolada (sem as minhas configurações), em 15/11/2026. Os valores em dólar são o “equivalente de API”: o custo que o próprio Claude Code informa no fim de cada execução (<code>total_cost_usd</code>), calculado pelo preço oficial. Na assinatura, você não paga isso em dinheiro: vira consumo do seu limite. “Esforço” (low, medium, high) é quanto o modelo pensa e confere antes de responder; você escolhe com <code>/effort</code>.</p>
+  <h2>Nêo acreditei: <span class="amb">fui medir</span></h2>
+  <p class="sub">Tudo rodou no Claude Code pela assinatura, numa pasta isolada (sem as minhas configurações), em 15/11/2026. Os valores em dólar sêo o “equivalente de API”: o custo que o próprio Claude Code informa no fim de cada execuçêo (<code>total_cost_usd</code>), calculado pelo preço oficial. Na assinatura, você nêo paga isso em dinheiro: vira consumo do seu limite. “Esforço” (low, medium, high) é quanto o modelo pensa e confere antes de responder; você escolhe com <code>/effort</code>.</p>
 
   <h3>1. A busca de arquivo, com e sem o arquivo do kit</h3>
-  <p class="mut">Sessão no Fable 5.2. Pedi para o Claude Code achar uma coisa no código usando a busca embutida. Doze rodadas, seis sem o kit e seis com: oito numa busca simples (no repositório público <a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>) e quatro numa busca pesada, num projeto privado de 29 mil linhas.</p>
+  <p class="mut">Sessêo no Fable 5.2. Pedi para o Claude Code achar uma coisa no código usando a busca embutida. Doze rodadas, seis sem o kit e seis com: oito numa busca simples (no repositório público <a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>) e quatro numa busca pesada, num projeto privado de 29 mil linhas.</p>
   <div class="bars">
     <div class="bar"><span>Busca no Opus (sem o kit)</span><span class="t"><i class="bad" style="width:100%"></i></span><span class="v">US$ 0,05–0,12</span></div>
     <div class="bar"><span>Busca no Haiku (com o kit)</span><span class="t"><i class="ok" style="width:3%"></i></span><span class="v">US$ 0,002</span></div>
   </div>
-  <p><span class="big">22× a 48×</span> <span class="mut">mais barata a busca (em média, umas 35 vezes), com a mesma resposta certa nas 12 rodadas. Comparando cada rodada sem o kit com a sua par com o kit, a busca ficou de 22 a 48 vezes mais barata. A sessão inteira ficou de 28% a 40% mais barata (média de cada série), porque a parte do próprio Fable não muda. A busca simples você refaz com o kit; a pesada rodou num projeto privado, que não vai no repositório.</span></p>
+  <p><span class="big">22× a 48×</span> <span class="mut">mais barata a busca (em média, umas 35 vezes), com a mesma resposta certa nas 12 rodadas. Comparando cada rodada sem o kit com a sua par com o kit, a busca ficou de 22 a 48 vezes mais barata. A sessêo inteira ficou de 28% a 40% mais barata (média de cada série), porque a parte do próprio Fable nêo muda. A busca simples você refaz com o kit; a pesada rodou num projeto privado, que nêo vai no repositório.</span></p>
 
   <h3 style="margin-top:34px">2. Fable chefiando ajudantes compensa?</h3>
-  <p class="mut">A mesma tarefa de três jeitos, duas rodadas cada, com nota dada por um checador que o modelo não vê. Tarefa pequena: corrigir um carrinho de compras (12 testes). Tarefa grande: corrigir 20 módulos independentes, cada um com um defeito.</p>
+  <p class="mut">A mesma tarefa de três jeitos, duas rodadas cada, com nota dada por um checador que o modelo nêo vê. Tarefa pequena: corrigir um carrinho de compras (12 testes). Tarefa grande: corrigir 20 módulos independentes, cada um com um defeito.</p>
   <table class="n">
     <tr><th>Jeito</th><th>Pequena</th><th>Grande</th><th>Nota</th></tr>
     <tr><td>Opus 5.5 sozinho (medium)</td><td><strong>US$ 0,19</strong></td><td><strong>US$ 0,42</strong></td><td>máxima nas 4</td></tr>
     <tr><td>Fable 5.2 sozinho (medium)</td><td>US$ 0,46</td><td>US$ 0,62</td><td>máxima nas 4</td></tr>
     <tr><td>Fable chefiando ajudantes Sonnet</td><td>US$ 0,83</td><td>US$ 1,01</td><td>máxima nas 4</td></tr>
   </table>
-  <p style="margin-top:14px">Mesma nota nos três. <strong>Chefiar ajudantes custou de 1,6× a 1,8× o Fable sozinho e de 2,4× a 4,4× o Opus sozinho</strong>, e em geral demorou mais. As duas tarefas cabiam numa sessão, que é exatamente o caso em que o documento diz que dividir perde. Não testamos trabalho maior que uma janela de contexto, onde o documento diz que dividir pode ganhar.</p>
+  <p style="margin-top:14px">Mesma nota nos três. <strong>Chefiar ajudantes custou de 1,6× a 1,8× o Fable sozinho e de 2,4× a 4,4× o Opus sozinho</strong>, e em geral demorou mais. As duas tarefas cabiam numa sessêo, que é exatamente o caso em que o documento diz que dividir perde. Nêo testamos trabalho maior que uma janela de contexto, onde o documento diz que dividir pode ganhar.</p>
   <p class="mut">Uma nota honesta: nos 20 módulos, o meu checador marcou 19 de 20 nas seis rodadas. O erro era meu: um teste esperava “De volta”, e a regra escrita pede “De Volta”, que foi o que os seis fizeram. Corrigi o checador (<a href="https://github.com/linnoff88-dev/fable-barato/blob/main/medicao/resultados/tres-jeitos-vinte-modulos-20261115-042648/NOTA.md">nota nos resultados</a>).</p>
 </div></section>
 
@@ -370,11 +370,11 @@
   <h2>Seis regras para pagar o Fable <span class="amb">só onde ele vale</span></h2>
   <div class="grid g3">
     <div class="card"><h3>1. Comece no Opus medium</h3><p>É o ponto de partida que a própria Anthropic recomenda. Suba o esforço antes de trocar de modelo.</p></div>
-    <div class="card"><h3>2. Busca no Haiku</h3><p>Um arquivo Explore com o modelo Haiku tira a busca do modelo caro. Foi de 22 a 48 vezes mais barata na nossa medição.</p></div>
-    <div class="card"><h3>3. Ajudante sempre com modelo fixo</h3><p>Ajudante (subagente) é uma segunda cópia do Claude que o Claude Code abre para fazer uma parte do trabalho. Ajudante sem modelo definido herda o da sessão. Se a sessão é Fable, quem só lê arquivo também paga Fable.</p></div>
-    <div class="card"><h3>4. Não divida o que cabe numa sessão</h3><p>Chefiar ajudantes custou de 1,6 a 4,4 vezes mais, pela mesma nota. Divida só quando houver muitas partes independentes e muita leitura.</p></div>
-    <div class="card"><h3>5. Fable para julgar, não para tudo</h3><p>Deixe o Opus fazer o trabalho e chame o Fable só para revisar o que é crítico. Sem exagero: o documento mediu um modelo forte como conselheiro e o ganho foi pequeno, 1,7 ponto por cerca de 2,1 vezes o custo.</p></div>
-    <div class="card"><h3>6. Audite a cada modelo novo</h3><p>Instrução escrita para um modelo antigo faz o novo trabalhar a mais. A Anthropic mediu 14% de economia só com essa revisão.</p></div>
+    <div class="card"><h3>2. Busca no Haiku</h3><p>Um arquivo Explore com o modelo Haiku tira a busca do modelo caro. Foi de 22 a 48 vezes mais barata na nossa mediçêo.</p></div>
+    <div class="card"><h3>3. Ajudante sempre com modelo fixo</h3><p>Ajudante (subagente) é uma segunda cópia do Claude que o Claude Code abre para fazer uma parte do trabalho. Ajudante sem modelo definido herda o da sessêo. Se a sessêo é Fable, quem só lê arquivo também paga Fable.</p></div>
+    <div class="card"><h3>4. Nêo divida o que cabe numa sessêo</h3><p>Chefiar ajudantes custou de 1,6 a 4,4 vezes mais, pela mesma nota. Divida só quando houver muitas partes independentes e muita leitura.</p></div>
+    <div class="card"><h3>5. Fable para julgar, nêo para tudo</h3><p>Deixe o Opus fazer o trabalho e chame o Fable só para revisar o que é crítico. Sem exagero: o documento mediu um modelo forte como conselheiro e o ganho foi pequeno, 1,7 ponto por cerca de 2,1 vezes o custo.</p></div>
+    <div class="card"><h3>6. Audite a cada modelo novo</h3><p>Instruçêo escrita para um modelo antigo faz o novo trabalhar a mais. A Anthropic mediu 14% de economia só com essa revisêo.</p></div>
   </div>
   <p class="mut" style="margin-top:16px">Quer que o Claude escolha o modelo e o esforço por você? Isso fica no nível 2 do kit, o <a href="https://linnoff88-dev.github.io/ uma skill que olha a tarefa e diz qual modelo e qual esforço usar, agora atualizada para o Fable 5.2. <a href="#maestro">Como usar ↓</a></p>
 </div></section>
@@ -382,7 +382,7 @@
 <div id="tecnico" class="techhead"><div class="wrap">
   <span class="chip">Parte técnica</span>
   <h2>O kit: <span class="amb">para quem quer instalar e medir</span></h2>
-  <p class="sub">Daqui para baixo é a parte técnica: instalar, conferir e refazer as medições. Você <strong>não precisa</strong> desta parte para entender o que está acima.</p>
+  <p class="sub">Daqui para baixo é a parte técnica: instalar, conferir e refazer as medições. Você <strong>nêo precisa</strong> desta parte para entender o que está acima.</p>
 </div></div>
 
 <div class="techzone">
@@ -391,9 +391,9 @@
   <h2>Quatro peças, <span class="amb">um instalador</span></h2>
   <div class="grid g2">
     <div class="card"><h3>🔎 agentes/Explore.md</h3><p>Substitui a busca embutida: só leitura (Read, Glob, Grep), <code>model: haiku</code>, <code>effort: medium</code>.</p></div>
-    <div class="card"><h3>🧭 regras/QUANDO-DIVIDIR.md</h3><p>Bloco para o seu CLAUDE.md: modelo padrão, modelo de cada tipo de ajudante, quando dividir o trabalho e o briefing de 5 itens.</p></div>
-    <div class="card"><h3>🧐 agentes/revisor-fable.md</h3><p>Revisão final no Fable 5.2 (high), só quando você pede “revisão fable”. Não edita nada: aponta o que bloqueia, o que deveria mudar e o que é sugestão.</p></div>
-    <div class="card"><h3>🩺 skill /fable-barato</h3><p><code>status</code> confere a instalação, <code>auditar</code> revisa CLAUDE.md, agentes e skills sem mudar nada, e <code>dividir &lt;tarefa&gt;</code> diz se vale dividir a tarefa.</p></div>
+    <div class="card"><h3>🧭 regras/QUANDO-DIVIDIR.md</h3><p>Bloco para o seu CLAUDE.md: modelo padrêo, modelo de cada tipo de ajudante, quando dividir o trabalho e o briefing de 5 itens.</p></div>
+    <div class="card"><h3>🧐 agentes/revisor-fable.md</h3><p>Revisêo final no Fable 5.2 (high), só quando você pede “revisêo fable”. Nêo edita nada: aponta o que bloqueia, o que deveria mudar e o que é sugestêo.</p></div>
+    <div class="card"><h3>🩺 skill /fable-barato</h3><p><code>status</code> confere a instalaçêo, <code>auditar</code> revisa CLAUDE.md, agentes e skills sem mudar nada, e <code>dividir &lt;tarefa&gt;</code> diz se vale dividir a tarefa.</p></div>
   </div>
 </div></section>
 
@@ -401,7 +401,7 @@
   <span class="chip">Pré-requisitos</span>
   <h2>O que você precisa</h2>
   <div class="grid g2">
-    <div class="card"><h3>Claude Code</h3><p>Testado na versão 2.1.325, pela assinatura (confira com <code>claude --version</code>; para ver o modelo de cada ajudante no <code>/tasks</code>, use 2.1.242 ou mais nova). O kit roda em Linux e macOS (bash).</p></div>
+    <div class="card"><h3>Claude Code</h3><p>Testado na versêo 2.1.325, pela assinatura (confira com <code>claude --version</code>; para ver o modelo de cada ajudante no <code>/tasks</code>, use 2.1.242 ou mais nova). O kit roda em Linux e macOS (bash).</p></div>
     <div class="card"><h3>Python 3 e git</h3><p>O instalador usa Python para tirar e pôr o bloco de regras sem duplicar. As medições rodam só no Linux: precisam de <code>rsync</code>, <code>timeout</code> e do login em <code>~/.claude/.credentials.json</code> (no macOS ele fica no Keychain).</p></div>
   </div>
 </div></section>
@@ -412,11 +412,11 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Baixe e instale</h3>
-    <p>Instala no seu usuário (vale para todos os projetos). Se você já tiver um <code>Explore.md</code> ou um CLAUDE.md, ganham backup com o final <code>.bak-fable-barato</code>. Rodar de novo não duplica nada.</p>
-<pre><span class="c"># opção A: para todos os seus projetos (~/.claude)</span>
+    <p>Instala no seu usuário (vale para todos os projetos). Se você já tiver um <code>Explore.md</code> ou um CLAUDE.md, ganham backup com o final <code>.bak-fable-barato</code>. Rodar de novo nêo duplica nada.</p>
+<pre><span class="c"># opçêo A: para todos os seus projetos (~/.claude)</span>
 <span class="k">git clone https://github.com/linnoff88-dev/fable-barato ~/fable-barato</span>
 <span class="k">~/fable-barato/instalar.sh</span></pre>
-<pre><span class="c"># opção B: só num projeto (grava .claude/ e CLAUDE.md dentro dele)</span>
+<pre><span class="c"># opçêo B: só num projeto (grava .claude/ e CLAUDE.md dentro dele)</span>
 <span class="k">cd ~/meu-projeto</span>
 <span class="k">~/fable-barato/instalar.sh --projeto</span></pre>
   </div></div>
@@ -425,31 +425,31 @@
     <h3>Confira que a busca foi para o Haiku</h3>
     <p>Abra o Claude Code de novo, peça uma busca e rode <code>/tasks</code> logo em seguida: o Explore tem que aparecer no Haiku. Um ajudante que terminou fica na lista só uns 30 segundos.</p>
 <pre><span class="c"># dentro do Claude Code</span>
-<span class="s">use o Explore para achar onde a função X é definida</span>
+<span class="s">use o Explore para achar onde a funçêo X é definida</span>
 <span class="k">/tasks</span>
 <span class="k">/fable-barato status</span>      <span class="c"># tabela: Explore, agentes sem model, bloco de regras, esforço</span></pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Use no dia a dia</h3>
-    <p>A regra do CLAUDE.md já orienta o modelo. Os outros comandos ficam à mão.</p>
+    <p>A regra do CLAUDE.md já orienta o modelo. Os outros comandos ficam à mêo.</p>
 <pre><span class="k">/fable-barato dividir</span> <span class="s">"revisar os 40 posts do blog"</span>   <span class="c"># vale dividir? com qual modelo?</span>
-<span class="s">revisão fable</span>                                         <span class="c"># chama o revisor-fable no trabalho pronto</span>
+<span class="s">revisêo fable</span>                                         <span class="c"># chama o revisor-fable no trabalho pronto</span>
 <span class="k">/fable-barato auditar</span>                                 <span class="c"># auditoria sem mudar nada; aplica só com "aplica"</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Desfazer</h3>
     <p>Tira o bloco de regras, a skill e o revisor, e devolve o seu <code>Explore.md</code> antigo, se havia um. A cópia <code>CLAUDE.md.bak-fable-barato</code> fica guardada.</p>
-<pre><span class="k">~/fable-barato/instalar.sh --desfazer</span>                          <span class="c"># opção A</span>
-<span class="k">cd ~/meu-projeto &amp;&amp; ~/fable-barato/instalar.sh --desfazer --projeto</span>   <span class="c"># opção B</span></pre>
+<pre><span class="k">~/fable-barato/instalar.sh --desfazer</span>                          <span class="c"># opçêo A</span>
+<span class="k">cd ~/meu-projeto &amp;&amp; ~/fable-barato/instalar.sh --desfazer --projeto</span>   <span class="c"># opçêo B</span></pre>
   </div></div>
 </div></section>
 
 <section id="maestro"><div class="wrap">
   <span class="chip">Nível 2 do kit</span>
   <h2>maestro-roteador: <span class="amb">a escolha de modelo e esforço por tarefa</span></h2>
-  <p class="sub">O maestro é uma skill que lê a tarefa, acha o passo mais difícil e diz qual modelo e qual esforço usar, inclusive para cada ajudante. A versão 1.3 traz as regras do Fable 5.2 deste guia. Ela escolhe sozinha o modelo dos ajudantes; para a sessão em que você está, ela recomenda e você troca com <code>/model</code> e <code>/effort</code>.</p>
+  <p class="sub">O maestro é uma skill que lê a tarefa, acha o passo mais difícil e diz qual modelo e qual esforço usar, inclusive para cada ajudante. A versêo 1.3 traz as regras do Fable 5.2 deste guia. Ela escolhe sozinha o modelo dos ajudantes; para a sessêo em que você está, ela recomenda e você troca com <code>/model</code> e <code>/effort</code>.</p>
 <pre><span class="k">git clone https://github.com/linnoff88-dev/maestro-roteador</span>
 <span class="k">cp -r maestro-roteador/skills/maestro-roteador ~/.claude/skills/</span>
 <span class="c"># no Claude Code:</span> <span class="s">faz a triagem disso: &lt;sua tarefa&gt;</span></pre>
@@ -458,14 +458,14 @@
 <section id="exemplos"><div class="wrap">
   <span class="chip">Refaça as medições</span>
   <h2>Meça no <span class="amb">seu</span> projeto</h2>
-  <p class="sub">Os scripts rodam pela sua assinatura, numa pasta temporária (não leem o seu CLAUDE.md, hooks nem plugins). Gastam pouco do limite: a busca, alguns centavos equivalentes por rodada; os 3 jeitos, até US$ 1 por rodada. Sem <code>PEDIDO</code>, a busca procura uma coisa que só existe no projeto de teste (<a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>: clone e passe a pasta dele para refazer a nossa medição); com <code>GABARITO=arquivo.txt</code> (uma resposta esperada por linha), o resumo dá a nota.</p>
+  <p class="sub">Os scripts rodam pela sua assinatura, numa pasta temporária (nêo leem o seu CLAUDE.md, hooks nem plugins). Gastam pouco do limite: a busca, alguns centavos equivalentes por rodada; os 3 jeitos, até US$ 1 por rodada. Sem <code>PEDIDO</code>, a busca procura uma coisa que só existe no projeto de teste (<a href="https://github.com/linnoff88-dev/esforco-medido">esforco-medido</a>: clone e passe a pasta dele para refazer a nossa mediçêo); com <code>GABARITO=arquivo.txt</code> (uma resposta esperada por linha), o resumo dá a nota.</p>
 <pre><span class="k">cd ~/fable-barato/medicao</span>
 <span class="k">PEDIDO=</span><span class="s">"Use the Explore subagent (do not search yourself) to find where X is defined. Reply only with path:line."</span> \
   <span class="k">./medir-explore.sh</span> <span class="s">~/meu-projeto</span> 3 fable medium   <span class="c"># troque X por algo do seu projeto</span>
 <span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/carrinho</span> 2                 <span class="c"># Fable só, Opus só, Fable chefiando</span>
 <span class="k">./medir-3jeitos.sh</span> <span class="s">tarefas/vinte-modulos</span> 2
 <span class="k">cat</span> <span class="s">resultados/*/resumo.md</span></pre>
-  <p class="mut">Os resultados brutos destas medições estão em <a href="https://github.com/linnoff88-dev/fable-barato/tree/main/medicao/resultados">medicao/resultados</a>.</p>
+  <p class="mut">Os resultados brutos destas medições estêo em <a href="https://github.com/linnoff88-dev/fable-barato/tree/main/medicao/resultados">medicao/resultados</a>.</p>
 </div></section>
 </div>
 

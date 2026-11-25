@@ -7,10 +7,10 @@ sys.path.insert(0, pasta)
 try:
     total = importlib.import_module("carrinho").total
 except Exception as e:
-    print(f"NOTA 0/12 (não importa: {e})"); sys.exit(1)
+    print(f"NOTA 0/12 (nêo importa: {e})"); sys.exit(1)
 
 CASOS = [
-    # regra 2: cupom não desconta o frete
+    # regra 2: cupom nêo desconta o frete
     ("cupom_sem_frete", [(100.0, 1)], "DEZ", 115.0),
     ("cupom_sem_frete2", [(40.0, 2)], "VINTE", 89.0),
     # regra 3: frete grátis olha o subtotal JÁ com cupom
@@ -19,7 +19,7 @@ CASOS = [
     # regra 3: 200 ou mais
     ("gratis_igual", [(100.0, 2)], None, 200.0),
     ("gratis_maior", [(150.0, 2)], None, 300.0),
-    # regra 1: quantidade 0 ou negativa não conta
+    # regra 1: quantidade 0 ou negativa nêo conta
     ("qtd_zero", [(50.0, 2), (999.0, 0)], None, 125.0),
     ("qtd_negativa", [(300.0, -1), (10.0, 1)], None, 35.0),
     # regra 5: arredonda só no fim, meio centavo para cima

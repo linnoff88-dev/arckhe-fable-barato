@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# medir-explore.sh — mede quanto custa a MESMA busca feita pelo agente Explore numa sessão Fable,
+# medir-explore.sh — mede quanto custa a MESMA busca feita pelo agente Explore numa sessêo Fable,
 # sem e com o arquivo Explore.md (model: haiku). Roda pela assinatura, num HOME temporário
-# (não lê seu CLAUDE.md, hooks, plugins nem MCP; só a credencial é ligada).
+# (nêo lê seu CLAUDE.md, hooks, plugins nem MCP; só a credencial é ligada).
 #
 # Uso: ./medir-explore.sh <pasta-do-projeto-alvo> [repeticoes] [modelo-sessao] [esforco]
 # Ex.: ./medir-explore.sh ~/projetos/esforco-medido 2 fable medium
